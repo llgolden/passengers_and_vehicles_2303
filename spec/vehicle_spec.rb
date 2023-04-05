@@ -4,38 +4,29 @@ require './lib/vehicle'
 
 RSpec.describe Vehicle do
   it "exists" do
-
     vehicle = Vehicle.new("2001", "Honda", "Civic")    
     expect(vehicle).to be_a Vehicle
     expect(vehicle.year).to eq("2001")
     expect(vehicle.make).to eq("Honda")
     expect(vehicle.model).to eq("Civic")
+  end
+
+  it "can speed" do
+    vehicle = Vehicle.new("2001", "Honda", "Civic")    
+    
+    expect(vehicle.speeding?).to eq(false)
+    vehicle.speed
+    expect(vehicle.speeding?).to eq(true)
 
   end
+
+
 end
 
+# expect().to eq()
 
 
 
-# pry(main)> vehicle = Vehicle.new("2001", "Honda", "Civic")    
-# # => #<Vehicle:0x00007fe0da9c63d8...>
-
-# pry(main)> vehicle.year
-# # => "2001"
-
-# pry(main)> vehicle.make
-# # => "Honda"
-
-# pry(main)> vehicle.model
-# # => "Civic"
-
-# pry(main)> vehicle.speeding?
-# # => false
-
-# pry(main)> vehicle.speed
-
-# pry(main)> vehicle.speeding?
-# # => true
 
 # pry(main)> vehicle.passengers
 # # => []
