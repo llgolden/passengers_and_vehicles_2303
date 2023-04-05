@@ -7,7 +7,7 @@ RSpec.describe Park do
   it "exists" do
     park = Park.new("Golden", 20)  
     expect(park).to be_a Park
-    expect(park.unique_name).to eq("Golden")
+    expect(park.name).to eq("Golden")
     expect(park.admission_price).to eq(20)
   end
 
@@ -23,17 +23,32 @@ RSpec.describe Park do
     expect(park.park_vehicles).to eq([vehicle_1, vehicle_2])
   end
 
-  xit "can list the passengers in the vehicles" do
+  it "can list the passengers in the vehicles" do
     park = Park.new("Golden", 20)  
-  
-    # expect().to eq()
-
-
-  #   3. Each park can list all `passengers` that were in the vehicles that entered the park. 
+    vehicle_1 = Vehicle.new("2001", "Honda", "Civic")  
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+    jude = Passenger.new({"name" => "Jude", "age" => 20})    
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
+    park.add_vehicle(vehicle_1)
+    expect(park.park_passengers).to eq([])
+    park.add_passenger(charlie)
+    park.add_passenger(jude)
+    park.add_passenger(taylor)
+    expect(park.park_passengers).to eq([charlie, jude, taylor])
   end
 
   xit "can calculate revenue" do
     park = Park.new("Golden", 20)  
+    vehicle_1 = Vehicle.new("2001", "Honda", "Civic")  
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+    jude = Passenger.new({"name" => "Jude", "age" => 20})    
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
+    park.add_vehicle(vehicle_1)
+    park.add_passenger(charlie)
+    park.add_passenger(jude)
+    park.add_passenger(taylor)
+
+    
     
     # expect().to eq()
 

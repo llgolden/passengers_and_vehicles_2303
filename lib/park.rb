@@ -1,15 +1,24 @@
 class Park
-  attr_reader :unique_name, :admission_price, :park_vehicles
+  attr_reader :name, :admission_price, :park_vehicles, :park_passengers
 
-  def initialize (unique_name, admission_price)
-    @unique_name = unique_name
+  def initialize (name, admission_price)
+    @name = name
     @admission_price = admission_price    
     @park_vehicles = []
+    @park_passengers = []
   end
 
   def add_vehicle(vehicle_name)
     @park_vehicles << vehicle_name
   end
+
+  def add_passenger(passenger_name)
+    @park_passengers << passenger_name
+  end
+
+  def revenue
+
+  
 
 
 end
