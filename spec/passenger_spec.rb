@@ -1,8 +1,6 @@
 require 'rspec'
 require './lib/passenger'
 
-
-
 RSpec.describe Passenger do
   it "exists" do
     charlie = Passenger.new({name: "Charlie", age: 18})
@@ -29,11 +27,4 @@ RSpec.describe Passenger do
     charlie.drive
     expect(charlie.driver?).to eq(true)
   end
-
-
-
-
 end
-
-
-
